@@ -14,9 +14,7 @@ use App\Http\Controllers\WebCrawlerController;
 |
 */
 
-if (App::environment() != 'local') {  
-    URL::forceScheme('https');  
-}  
+URL::forceScheme('https'); 
 
 Route::get('/start', [WebCrawlerController::class, 'start'])->name('start');
 Route::post('/crawl', [WebCrawlerController::class, 'crawl'])->name('crawl');
