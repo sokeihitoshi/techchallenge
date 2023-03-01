@@ -23,6 +23,14 @@
                 <label>URL #4: https://agencyanalytics.com/</label>
                 <input type="text" name="url[]">
             </div>
+            <div class="form-group">
+                <label>URL #5: https://agencyanalytics.com/</label>
+                <input type="text" name="url[]">
+            </div>
+            <div class="form-group">
+                <label>URL #6: https://agencyanalytics.com/</label>
+                <input type="text" name="url[]">
+            </div>
             <input type="submit" value="Crawl">
         </form>
 </body>
