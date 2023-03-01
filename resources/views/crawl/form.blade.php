@@ -1,7 +1,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
-    <title>Laravel</title>
+    <title>Start Page</title>
 </head>
 <body>
         <form method="post" action="{{ route('crawl') }}">

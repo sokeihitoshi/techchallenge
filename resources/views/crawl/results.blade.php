@@ -3,7 +3,10 @@ table, th, td {
   border: 1px solid;
 }
 </style>
-
+<head>
+    <meta charset="utf-8">
+    <title>Results Page</title>
+</head>
 <body>
     <h1>Crawling Results:</h1>
     <p>Pages Crawled: {{ $pages }}</p>

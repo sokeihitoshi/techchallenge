@@ -8,17 +8,22 @@ use App\Http\Requests\WebCrawlerRequest;
 
 class WebCrawlerController extends Controller
 {
-
+   /**
+    * Method to show list of websites to crawl
+    *
+    * @param $request : Get request, mostly just default things
+    * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+    * @throws BindingResolutionException
+    */
     public function start(Request $request)
     {
         return view(('crawl.form'));
     }
 
    /**
-    * This is the method that will simply list all the files uploaded by name and provide a
-    * link to each one so they may be downloaded
+    * Method to crawl the listed webpages
     *
-    * @param $request : A standard form request object
+    * @param $request : WebCrawlerRequest which is mostly there to make sure that it's recieving an array
     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
     * @throws BindingResolutionException
     */
@@ -36,7 +41,6 @@ class WebCrawlerController extends Controller
         $titleCount = 0;
 
         foreach($urls as $url) {
-            error_log("URL: " . $url);
             $pages++;
             $timeStart = microtime(true);
             $combinedUrl = 'https://agencyanalytics.com/' . $url;
@@ -47,6 +51,7 @@ class WebCrawlerController extends Controller
                 'url' => $combinedUrl,
                 'code' => $response->getStatusCode()
             );
+
             if ($response->successful() === true) {
                 $rawHTML = (string) $response->getBody();
                 $dom = new \DOMDocument();
