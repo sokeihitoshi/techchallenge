@@ -3,6 +3,8 @@ services:
   app:
     build:
       context: ./
+    volumes:
+      - .:/var/www/html
     ports:
       - "80:80"
     environment:

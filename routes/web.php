@@ -13,6 +13,7 @@ use App\Http\Controllers\WebCrawlerController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
 if (App::environment('production')) {  
     URL::forceScheme('https');  
 }  
