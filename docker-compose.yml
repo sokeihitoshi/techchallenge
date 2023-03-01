@@ -8,5 +8,5 @@ services:
     ports:
       - "80:80"
     environment:
-      - APP_ENV=local
-      - APP_DEBUG=true
+      - APP_ENV=production
+      - APP_DEBUG=false
