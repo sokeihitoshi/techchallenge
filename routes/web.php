@@ -14,7 +14,7 @@ use App\Http\Controllers\WebCrawlerController;
 |
 */
 
-if (App::environment('production')) {  
+if (App::environment() != 'local') {  
     URL::forceScheme('https');  
 }  
 
