@@ -73,7 +73,6 @@ class WebCrawlerController extends Controller
                     if ($imgSrc !== null) {
                         $img = $imgSrc->value;
                         if (in_array($img, $images) === false) {
-                            error_log($img);
                             $images[] = $img;
                         }
                     }
@@ -85,12 +84,10 @@ class WebCrawlerController extends Controller
                         $link = $linkHref->value;
                         if (strpos($link, '#') === 0) {
                             if (in_array($link, $internalLinks) === false) {
-                                error_log($link);
                                 $internalLinks[] = $link;
                             }
                         } else {
                             if (in_array($link, $externalLinks) === false) {
-                                error_log($link);
                                 $externalLinks[] = $link;
                             }
                         }
