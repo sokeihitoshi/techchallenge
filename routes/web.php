@@ -13,8 +13,9 @@ use App\Http\Controllers\WebCrawlerController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
-URL::forceScheme('https'); 
+if (App::environment('production')) {  
+    URL::forceScheme('https');  
+}  
 
 Route::get('/start', [WebCrawlerController::class, 'start'])->name('start');
 Route::post('/crawl', [WebCrawlerController::class, 'crawl'])->name('crawl');
